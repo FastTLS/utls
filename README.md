@@ -1,3 +1,28 @@
+# FastTLS 托管分支说明 / Fork scope
+
+这是 FastTLS 托管的 utls 派生仓库。下面保留上游使用、致谢与协议说明，其中的上游维护承诺、发布渠道和徽章仅指相应上游，不自动适用于此分支。普通 Fastls/Python/Node 使用者从 [统一文档](https://fasttls.github.io/) 开始，无需单独安装本仓库。
+
+This is a FastTLS-hosted fork. Upstream documentation below describes the upstream project, not a maintenance or compatibility promise for this fork. See the [FastTLS documentation](https://fasttls.github.io/) for application-level clients.
+
+## 使用与兼容 / Usage and compatibility
+
+当前 module 路径为 `github.com/refraction-networking/utls`，本分支 go.mod 要求 Go 1.27。GitHub 仓库名与 module 路径可能不同，不能只把导入路径改成 FastTLS 就假设使用了本分支。需要定制分支时，先固定已审核提交，再按 Go modules 的 replace/vendor 机制选择该源码，并在自己的目标环境验证；下方安装命令通常安装上游模块。
+
+uTLS 提供 TLS ClientHello 参数控制，不负责 HTTP 头序、H2 配置或页面 JavaScript。未实现的扩展/密码算法不因在 ClientHello 声明而获得真实协商能力；具体支持范围以此分支代码为准。使用时保留证书和主机名验证。
+
+## 授权与反馈 / License and support
+
+本仓库保留 [BSD-3-Clause 许可证](LICENSE)、原版权与其它随附声明，不将上游代码改为 Apache-2.0。品牌、图片或嵌入第三方内容可能另有条款；请按实际文件核对。分支问题报到 [FastTLS/utls Issues](https://github.com/FastTLS/utls/issues)，上游通用问题先在本分支及上游版本分别复现。
+
+## 使用边界与免责声明
+
+仅在拥有权限的系统、数据和网络上使用，并遵守适用法律、服务条款及隐私要求。软件按许可证约定以“现状”提供，不承诺可用性、特定用途适用性、第三方服务放行、匿名性或与真实浏览器完全一致。浏览器名称和版本用于描述配置，不表示获得相应厂商认证或背书。部署方负责访问控制、密钥和个人信息保护、请求限额及数据备份；担保排除与责任限制以随附许可证及适用法律为准。本说明不改变许可证授予的权利或新增许可限制。
+
+
+Use only authorized systems and follow applicable laws and service terms. Software is provided as-is under its actual license; no guarantee of full browser equivalence, anonymity or third-party acceptance is made. Upstream names do not imply endorsement. This notice does not change license rights.
+
+---
+
 # ![uTLS](logo_small.png) uTLS
 [![Build Status](https://github.com/refraction-networking/utls/actions/workflows/go.yml/badge.svg?branch=master)](https://github.com/refraction-networking/utls/actions/workflows/go.yml) 
 [![godoc](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/refraction-networking/utls#UConn)
@@ -264,7 +289,7 @@ fingerprinting a capture and does not change `Config.RootCAs`.
 	
 # Usage
 ## Examples
-Find basic examples [here](examples/examples.go).  
+Find basic examples [here](examples/).
 Here's a more [advanced example](https://github.com/sergeyfrolov/gotapdance/blob//9a777f35a04b0c4c5dacd30bca0e9224eb737b5e/tapdance/conn_raw.go#L275-L292) showing how to generate randomized ClientHello, modify generated ciphersuites a bit, and proceed with the handshake.
 ### Migrating from "crypto/tls"
 Here's how default "crypto/tls" is typically used:
