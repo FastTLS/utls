@@ -1,5 +1,7 @@
 # FastTLS 托管分支说明 / Fork scope
 
+[English documentation](https://fasttls.github.io/en/ecosystem/)
+
 这是 FastTLS 托管的 utls 派生仓库。下面保留上游使用、致谢与协议说明，其中的上游维护承诺、发布渠道和徽章仅指相应上游，不自动适用于此分支。普通 Fastls/Python/Node 使用者从 [统一文档](https://fasttls.github.io/) 开始，无需单独安装本仓库。
 
 This is a FastTLS-hosted fork. Upstream documentation below describes the upstream project, not a maintenance or compatibility promise for this fork. See the [FastTLS documentation](https://fasttls.github.io/) for application-level clients.
